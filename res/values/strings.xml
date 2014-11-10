@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Etest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="menuLabelText">MENU</string>
+    <string name="btnDodajPolowText">Dodaj połów</string>
+    <string name="btnZaznaczMiejsceText">Zaznacz Miejsce</string>
+    <string name="btnHistoriaPolowowText">Historia połowów</string>
+    <string name="btnListaMiejscText">Zaznaczone miejsca</string>
+    <string name="title_activity_dodaj_polow">DodajPolowActivity</string>
+    <string name="lblDodajPolowText">DODAJ POŁÓW</string>
+    <string name="editTextWpiszGatunekHint">wpisz gatunek</string>
+    <string name="editTextWpiszDlugoscHint">wpisz długość</string>
+    <string name="editTextWpiszWageHint">wpisz wagę</string>
+    <string name="btnDodajText">DODAJ</string>
+    <string name="title_activity_lista_polowow">ListaPolowow</string>
+    <string name="lblListaPolowowText">Lista połowów</string>
+    <string name="title_activity_mapa">Mapa</string>
+    <string name="title_activity_my_map">MyMap</string>
+    <string name="title_activity_lista_miejsc">ListaMiejsc</string>
+    <string name="ListaMiejscTextView1Text">Lista miejsc</string>
+    <string name="title_activity_klasa_glowna">KlasaGlowna</string>
+    <string name="title_activity_moja_lista_polowow">MojaListaPolowow</string>
+
+</resources>
