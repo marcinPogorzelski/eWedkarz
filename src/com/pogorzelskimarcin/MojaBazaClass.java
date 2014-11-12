@@ -61,7 +61,7 @@ public class MojaBazaClass extends SQLiteOpenHelper{
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		// TODO Auto-generated method stub
-		Log.i("UPGRADE BAZY","Baza została zupgrade`owana");
+		Log.i("UPGRADE BAZY","Baza zostala zupgrade`owana");
 		
 	}
 	

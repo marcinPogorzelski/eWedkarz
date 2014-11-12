@@ -77,7 +77,7 @@ public class ListaMiejsc extends ActionBarActivity {
 			MojaBazaClass mbc = new MojaBazaClass(myContext);
 			ArrayList<PolowP2> poList = mbc.getAll();
 			CustomAdapter customAdapter = new CustomAdapter(myContext, poList);
-			Log.i("TEST LISTY","Wywołano");
+			Log.i("TEST LISTY","Wywolano");
 			listView.setAdapter(customAdapter);
 			return rootView;
 		}

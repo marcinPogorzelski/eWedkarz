@@ -1,10 +1,16 @@
 package com.pogorzelskimarcin;
 
+import java.util.ArrayList;
+
+import com.google.android.gms.internal.lo;
+import com.google.android.gms.internal.mb;
+
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -69,11 +75,21 @@ public class ListaPolowow extends ActionBarActivity {
 			View rootView = inflater.inflate(R.layout.fragment_lista_polowow,
 					container, false);	
 			MojaBazaClass mbc = new MojaBazaClass(myContext);
-			String[]lista = new String[] { "Android", "iPhone", "WindowsMobile",
+			
+			ArrayList<PolowP2> listaPolowow = mbc.getAll();
+			
+			for (int i=0;i<listaPolowow.size();i++)
+			{
+				Log.i("ListaPolowow", listaPolowow.get(i).toString());
+			}
+			
+			
+			String[]lista = new String[] 
+					{ "Android", "iPhone", "WindowsMobile",
 			        "Blackberry", "WebOS", "Ubuntu", "Windows7", "Max OS X",
 			        "Linux", "OS/2" };
 			ListView listView = (ListView)rootView.findViewById(R.id.listView1);
-			listView.setAdapter(new ArrayAdapter<String>(myContext, R.layout.fragment_lista_polowow, R.id.listView1TextView, lista));
+			listView.setAdapter(new ArrayAdapter<PolowP2>(myContext, R.layout.fragment_lista_polowow, R.id.listView1TextView, listaPolowow));
 			return rootView;
 		}
 	}

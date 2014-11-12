@@ -32,7 +32,7 @@ public class MyCustomAdapterView extends LinearLayout {
 		TextView opisy = new TextView(context);
 		opisy.setTextSize(16);
 		opisy.setTypeface(Typeface.DEFAULT_BOLD);
-		opisy.setText("Waga: "+ polowP2.getWaga()+"; Długość: "+ polowP2.getDlugosc());
+		opisy.setText("Waga: "+ polowP2.getWaga()+"; Dlugosc: "+ polowP2.getDlugosc());
 		panLayout.addView(opisy);
 		
 		addView(panLayout, params);		
