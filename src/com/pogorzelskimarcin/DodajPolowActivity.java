@@ -6,11 +6,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class DodajPolowActivity extends ActionBarActivity {
@@ -70,23 +73,21 @@ public class DodajPolowActivity extends ActionBarActivity {
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_dodaj_polow,
 					container, false);
-//			MojaBazaClass mbc = new MojaBazaClass(myContext);
-//			Toast.makeText(myContext, mbc.getReadableDatabase().toString(), Toast.LENGTH_LONG).show();
-//			mbc.dodajWpis(
-//					"Szczupak"
-//					, 45.0
-//					, 15.0
-//					, 22.0
-//					, 52.0
-//					);
-//			
-//			mbc.getAll();
-			//DodajPolowDoListy(myContext);
+			Button button = (Button) rootView.findViewById(R.id.btnDodaj);
+			button.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Log.i("onClick", "Dodajê wpis...");
+					DodajPolowDoListy(myContext);
+					Log.i("onClick", "Dodano wpis.");
+				}
+			});
+
 			return rootView;
 		}
 		public void DodajPolowDoListy(Context context)
 		{
-			//TODO pobranie w³aœciwego kontekstu
 			MojaBazaClass mbc = new MojaBazaClass(context);
 			Toast.makeText(context, mbc.getReadableDatabase().toString(), Toast.LENGTH_LONG).show();
 			mbc.dodajWpis(
@@ -96,7 +97,6 @@ public class DodajPolowActivity extends ActionBarActivity {
 					, 22.0
 					, 55.0
 					);
-			//mbc.getAll();
 		}
 	}
 	

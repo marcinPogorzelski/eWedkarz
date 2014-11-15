@@ -55,22 +55,19 @@ public class ListaPolowow extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	
 
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenuInfo menuInfo) {
 		super.onCreateContextMenu(menu, v, menuInfo);
-		if(v.getId()==R.id.listView1)
-		{
-			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+		if (v.getId() == R.id.listView1) {
+			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
 			menu.setHeaderTitle("MENU");
 			menu.add("SPRAWDè SZCZEG”£Y");
 			menu.add("EDYTUJ");
 			menu.add("USU—");
 		}
 	}
-
 
 	/**
 	 * A placeholder fragment containing a simple view.
