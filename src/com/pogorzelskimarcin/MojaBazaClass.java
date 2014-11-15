@@ -81,7 +81,7 @@ public class MojaBazaClass extends SQLiteOpenHelper{
 		contentValues.put(NAZWA_LATT, latt);
 		contentValues.put(NAZWA_LONGITUDE, longitude);
 		db.insertOrThrow(NAZWA_TABELI, null, contentValues);
-		Log.i("BAZA DANYCH","Dodałem wpis do bazy");
+		Log.i("MojaBazaClass.dodajWpis","Dodalem wpis do bazy");
 	}
 	
 	public PolowP2 getSingleWpis(int id)
@@ -109,7 +109,7 @@ public class MojaBazaClass extends SQLiteOpenHelper{
 	{
 		ArrayList<PolowP2> lista = new ArrayList<PolowP2>();
 		String query = "select * from "+NAZWA_TABELI+";";
-		Log.i("LOG","Wywołano: " + query);
+		Log.i("MojaBazaClass.getAll","Wywolano: " + query);
 		SQLiteDatabase db = getReadableDatabase();
 		Cursor c = db.rawQuery(query, null);
 		

@@ -63,24 +63,42 @@ public class DodajPolowActivity extends ActionBarActivity {
 			myContext = activity;
 		}
 
+		
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState) {
 			View rootView = inflater.inflate(R.layout.fragment_dodaj_polow,
 					container, false);
-			MojaBazaClass mbc = new MojaBazaClass(myContext);
-			Toast.makeText(myContext, mbc.getReadableDatabase().toString(), Toast.LENGTH_LONG).show();
+//			MojaBazaClass mbc = new MojaBazaClass(myContext);
+//			Toast.makeText(myContext, mbc.getReadableDatabase().toString(), Toast.LENGTH_LONG).show();
+//			mbc.dodajWpis(
+//					"Szczupak"
+//					, 45.0
+//					, 15.0
+//					, 22.0
+//					, 52.0
+//					);
+//			
+//			mbc.getAll();
+			//DodajPolowDoListy(myContext);
+			return rootView;
+		}
+		public void DodajPolowDoListy(Context context)
+		{
+			//TODO pobranie w³aœciwego kontekstu
+			MojaBazaClass mbc = new MojaBazaClass(context);
+			Toast.makeText(context, mbc.getReadableDatabase().toString(), Toast.LENGTH_LONG).show();
 			mbc.dodajWpis(
 					"Szczupak"
 					, 45.0
 					, 15.0
 					, 22.0
-					, 52.0
+					, 55.0
 					);
-			
-			mbc.getAll();
-			return rootView;
+			//mbc.getAll();
 		}
 	}
+	
+	
 }
