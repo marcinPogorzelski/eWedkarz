@@ -23,5 +23,7 @@
     <string name="ListaMiejscTextView1Text">Lista miejsc</string>
     <string name="title_activity_klasa_glowna">KlasaGlowna</string>
     <string name="title_activity_moja_lista_polowow">MojaListaPolowow</string>
+    <string name="title_activity_warunki_pogodowe_from_json">WarunkiPogodoweFromJSON</string>
+    <string name="btnAktualneWarunki">Aktualne Warunki Pogodowe</string>
 
 </resources>

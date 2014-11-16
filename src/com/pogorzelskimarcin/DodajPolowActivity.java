@@ -61,7 +61,6 @@ public class DodajPolowActivity extends ActionBarActivity {
 
 		@Override
 		public void onAttach(Activity activity) {
-			// TODO Auto-generated method stub
 			super.onAttach(activity);
 			myContext = activity;
 		}
@@ -89,7 +88,7 @@ public class DodajPolowActivity extends ActionBarActivity {
 		public void DodajPolowDoListy(Context context)
 		{
 			MojaBazaClass mbc = new MojaBazaClass(context);
-			Toast.makeText(context, mbc.getReadableDatabase().toString(), Toast.LENGTH_LONG).show();
+			//Toast.makeText(context, mbc.getReadableDatabase().toString(), Toast.LENGTH_LONG).show();
 			mbc.dodajWpis(
 					"Szczupak"
 					, 45.0

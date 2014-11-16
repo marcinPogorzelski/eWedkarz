@@ -53,6 +53,13 @@
             android:text="@string/btnListaMiejscText"
             android:onClick="ListaMiejsc" />
 
+        <Button
+            android:id="@+id/ButtonAktualneWarunki"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnAktualneWarunki"
+            android:onClick="WarunkiPogodoweJSON" />
+
     </LinearLayout>
 
 </RelativeLayout>

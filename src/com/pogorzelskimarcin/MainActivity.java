@@ -83,5 +83,11 @@ public class MainActivity extends ActionBarActivity {
 		Intent intent = new Intent(this,ListaMiejsc.class);
 		startActivity(intent);
 	}
+	
+	public void WarunkiPogodoweJSON(View view)
+	{
+		Intent intent = new Intent(this,WarunkiPogodoweFromJSON.class);
+		startActivity(intent);
+	}
 
 }

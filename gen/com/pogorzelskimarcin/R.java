@@ -1462,6 +1462,7 @@ containing a value of this type.
         public static final int powered_by_google_light=0x7f020077;
     }
     public static final class id {
+        public static final int ButtonAktualneWarunki=0x7f080062;
         public static final int action_bar=0x7f08002e;
         public static final int action_bar_activity_content=0x7f080027;
         public static final int action_bar_container=0x7f08002d;
@@ -1473,17 +1474,17 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f080028;
         public static final int action_menu_presenter=0x7f080029;
         public static final int action_mode_close_button=0x7f080036;
-        public static final int action_settings=0x7f08005e;
+        public static final int action_settings=0x7f080063;
         public static final int activity_chooser_view_content=0x7f080037;
         public static final int always=0x7f08001e;
         public static final int android_listview=0x7f08004f;
         public static final int beginning=0x7f080023;
         public static final int book_now=0x7f080010;
-        public static final int btnDodaj=0x7f080056;
-        public static final int btnDodajPolow=0x7f08005a;
-        public static final int btnHistoriaPolowow=0x7f08005c;
-        public static final int btnListaMiejsc=0x7f08005d;
-        public static final int btnZaznaczMiejsce=0x7f08005b;
+        public static final int btnDodaj=0x7f08005a;
+        public static final int btnDodajPolow=0x7f08005e;
+        public static final int btnHistoriaPolowow=0x7f080060;
+        public static final int btnListaMiejsc=0x7f080061;
+        public static final int btnZaznaczMiejsce=0x7f08005f;
         public static final int buyButton=0x7f08000a;
         public static final int buy_now=0x7f08000f;
         public static final int buy_with_google=0x7f08000e;
@@ -1495,9 +1496,9 @@ containing a value of this type.
         public static final int dialog=0x7f080021;
         public static final int disableHome=0x7f08001b;
         public static final int dropdown=0x7f080022;
-        public static final int editTextWpiszDlugosc=0x7f080054;
-        public static final int editTextWpiszGatunek=0x7f080053;
-        public static final int editTextWpiszWage=0x7f080055;
+        public static final int editTextWpiszDlugosc=0x7f080058;
+        public static final int editTextWpiszGatunek=0x7f080057;
+        public static final int editTextWpiszWage=0x7f080059;
         public static final int edit_query=0x7f080042;
         public static final int end=0x7f080025;
         public static final int expand_activities_button=0x7f080038;
@@ -1511,13 +1512,13 @@ containing a value of this type.
         public static final int icon=0x7f08003c;
         public static final int ifRoom=0x7f08001d;
         public static final int image=0x7f080039;
-        public static final int lblDodajPolow=0x7f080052;
+        public static final int lblDodajPolow=0x7f080056;
         public static final int listMode=0x7f080014;
-        public static final int listView1=0x7f080057;
-        public static final int listView1TextView=0x7f080058;
+        public static final int listView1=0x7f08005b;
+        public static final int listView1TextView=0x7f08005c;
         public static final int list_item=0x7f08003b;
         public static final int match_parent=0x7f08000c;
-        public static final int menuLabel=0x7f080059;
+        public static final int menuLabel=0x7f08005d;
         public static final int middle=0x7f080024;
         public static final int mmap=0x7f080051;
         public static final int monochrome=0x7f080013;
@@ -1550,6 +1551,10 @@ containing a value of this type.
         public static final int submit_area=0x7f08004b;
         public static final int tabMode=0x7f080015;
         public static final int terrain=0x7f080003;
+        public static final int textViewTemperatura=0x7f080053;
+        public static final int textViewTemperaturaLabel=0x7f080052;
+        public static final int textViewWarunkiPogodowe=0x7f080055;
+        public static final int textViewWarunkiPogodoweLabel=0x7f080054;
         public static final int title=0x7f08003d;
         public static final int top_action_bar=0x7f080032;
         public static final int tv_location=0x7f080050;
@@ -1615,12 +1620,13 @@ containing a value of this type.
         public static final int activity_main=0x7f03001b;
         public static final int activity_moja_lista_polowow=0x7f03001c;
         public static final int activity_my_map=0x7f03001d;
-        public static final int fragment_dodaj_polow=0x7f03001e;
-        public static final int fragment_lista_miejsc=0x7f03001f;
-        public static final int fragment_lista_polowow=0x7f030020;
-        public static final int fragment_main=0x7f030021;
-        public static final int fragment_my_map=0x7f030022;
-        public static final int support_simple_spinner_dropdown_item=0x7f030023;
+        public static final int activity_warunki_pogodowe_from_json=0x7f03001e;
+        public static final int fragment_dodaj_polow=0x7f03001f;
+        public static final int fragment_lista_miejsc=0x7f030020;
+        public static final int fragment_lista_polowow=0x7f030021;
+        public static final int fragment_main=0x7f030022;
+        public static final int fragment_my_map=0x7f030023;
+        public static final int support_simple_spinner_dropdown_item=0x7f030024;
     }
     public static final class menu {
         public static final int dodaj_polow=0x7f0c0000;
@@ -1631,6 +1637,7 @@ containing a value of this type.
         public static final int mapa=0x7f0c0005;
         public static final int moja_lista_polowow=0x7f0c0006;
         public static final int my_map=0x7f0c0007;
+        public static final int warunki_pogodowe_from_json=0x7f0c0008;
     }
     public static final class string {
         public static final int ListaMiejscTextView1Text=0x7f060043;
@@ -1677,6 +1684,7 @@ containing a value of this type.
         public static final int accept=0x7f060002;
         public static final int action_settings=0x7f060032;
         public static final int app_name=0x7f060030;
+        public static final int btnAktualneWarunki=0x7f060047;
         public static final int btnDodajPolowText=0x7f060034;
         public static final int btnDodajText=0x7f06003d;
         public static final int btnHistoriaPolowowText=0x7f060036;
@@ -1800,6 +1808,7 @@ containing a value of this type.
         public static final int title_activity_mapa=0x7f060040;
         public static final int title_activity_moja_lista_polowow=0x7f060045;
         public static final int title_activity_my_map=0x7f060041;
+        public static final int title_activity_warunki_pogodowe_from_json=0x7f060046;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
          */
