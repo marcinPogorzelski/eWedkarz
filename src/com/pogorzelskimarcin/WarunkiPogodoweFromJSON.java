@@ -5,6 +5,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -17,27 +19,20 @@ public class WarunkiPogodoweFromJSON extends Activity {
 	private static final String WARUNKI_POGODOWE = "description";
 	private static String url = "http://api.openweathermap.org/data/2.5/weather?lat=52.48&lon=22.18&lang=pl&units=metric";
 	JSONArray jsonArray = null;
+	TextView textViewTemperatura;
+	TextView warunkiPogodowe;
+	TextView temperaturaLabel;
+	TextView warunkiLabel;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_warunki_pogodowe_from_json);
-		JSONParser jsonParser = new JSONParser();
-		JSONObject jsonObject = jsonParser.getJSONFromUrl(url);
-		try {
-			jsonArray = jsonObject.getJSONArray(WEATHER);
-			Log.i("JSON", "Pobieram");
-			JSONObject object = jsonArray.getJSONObject(0);
-			String temperatura = object.getString(TEMPERATURA);
-			String warunki = object.getString(WARUNKI_POGODOWE);
-			
-			final TextView textViewTemperatura = (TextView)findViewById(R.id.textViewTemperatura);
-			final TextView textViewWarunki = (TextView)findViewById(R.id.textViewWarunkiPogodowe);
-			textViewTemperatura.setText(temperatura);
-			textViewWarunki.setText(warunki);
-		} catch (JSONException e) {
-			Log.e("WarunkiPogodoweFromJSON","B³¹d podczas pobierania obiektu JSON");
-		}
+		temperaturaLabel = (TextView)findViewById(R.id.textViewTemperaturaLabel);
+		warunkiLabel = (TextView)findViewById(R.id.textViewWarunkiPogodoweLabel);
+		textViewTemperatura = (TextView)findViewById(R.id.textViewTemperatura);
+		warunkiPogodowe = (TextView)findViewById(R.id.textViewWarunkiPogodowe);
+		new JSONParse().execute();
 	}
 
 	@Override
@@ -58,4 +53,43 @@ public class WarunkiPogodoweFromJSON extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+private class JSONParse extends AsyncTask<String, String, JSONObject>
+{
+		private ProgressDialog progressDialog;
+	@Override
+	protected void onPreExecute() {
+		super.onPreExecute();
+		progressDialog = new ProgressDialog(WarunkiPogodoweFromJSON.this);
+		progressDialog.setMessage("Pobieram dane...");
+		progressDialog.setIndeterminate(false);
+		progressDialog.setCancelable(true);
+		progressDialog.show();
+	}
+
+	@Override
+	protected void onPostExecute(JSONObject result) {
+		progressDialog.dismiss();
+		try {
+			jsonArray = result.getJSONArray(WEATHER);
+			JSONObject obj = jsonArray.getJSONObject(0);
+			String warunki = obj.getString(WARUNKI_POGODOWE);
+			//String temp = obj.getString(TEMPERATURA);
+			warunkiPogodowe.setText(warunki);
+			textViewTemperatura.setText(warunki);
+			Log.i("WarunkiPogodoweFromJSON", result.toString());
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			Log.i("WarunkiPogodoweFromJSON", "B³¹d 'e': "+e.getLocalizedMessage());
+		}
+	}
+
+	@Override
+	protected JSONObject doInBackground(String... params) {
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObject = jsonParser.getJSONFromUrl(url);
+		return jsonObject;
+	}
+	}
+
 }
