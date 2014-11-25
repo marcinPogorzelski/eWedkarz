@@ -73,12 +73,13 @@ private class JSONParse extends AsyncTask<String, String, JSONObject>
 			jsonArray = result.getJSONArray(WEATHER);
 			JSONObject obj = jsonArray.getJSONObject(0);
 			String warunki = obj.getString(WARUNKI_POGODOWE);
-			//String temp = obj.getString(TEMPERATURA);
+			JSONObject objTemp = result.getJSONObject("main");
+			String temp = objTemp.getString(TEMPERATURA);
+			//String name = result.getString("name");
+			//Log.i("WarunkiPogodoweFromJSON 'name': ", name);
 			warunkiPogodowe.setText(warunki);
-			textViewTemperatura.setText(warunki);
-			Log.i("WarunkiPogodoweFromJSON", result.toString());
+			textViewTemperatura.setText(temp);
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			Log.i("WarunkiPogodoweFromJSON", "B³¹d 'e': "+e.getLocalizedMessage());
 		}

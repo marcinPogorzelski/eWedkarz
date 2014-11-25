@@ -11,8 +11,6 @@ public class CustomAdapter extends BaseAdapter {
 	
 	private Context context;
 	private List<PolowP2> listaPolowow;
-	
-	
 
 	public CustomAdapter(Context context, List<PolowP2> listaPolowow) {
 		super();

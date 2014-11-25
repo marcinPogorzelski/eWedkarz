@@ -31,7 +31,7 @@ public class MojaBazaClass extends SQLiteOpenHelper{
 
 	public MojaBazaClass(Context context) {
 		super(context,NAZWA_PLIKU_BAZY , null, 1);
-		Log.i("BAZA DANYCH","Uzyto konstruktora MojaBazaClass");
+		//Log.i("BAZA DANYCH","Uzyto konstruktora MojaBazaClass");
 		// TODO Auto-generated constructor stub	
 	}
 
@@ -84,6 +84,20 @@ public class MojaBazaClass extends SQLiteOpenHelper{
 		Log.i("MojaBazaClass.dodajWpis","Dodalem wpis do bazy");
 	}
 	
+	public boolean usunWpis(int indeks)
+	{
+		SQLiteDatabase db = getWritableDatabase();
+		Log.i("MojaBazaClass 'usunWpis': ","ID: "+ Integer.toString(indeks));
+		return db.delete(NAZWA_TABELI, NAZWA_ID + "=" + Integer.toString(indeks),null)>0;
+	}
+	
+	public int usunWszystko()
+	{
+		SQLiteDatabase db = getWritableDatabase();
+		Log.i("MojaBazaClass 'usunWszystko': ","Usuwam wszystkie wpisy z bazy danych!");
+		return db.delete(NAZWA_TABELI, null, null);
+	}
+	
 	public PolowP2 getSingleWpis(int id)
 	{
 		SQLiteDatabase db = getReadableDatabase();
@@ -124,7 +138,7 @@ public class MojaBazaClass extends SQLiteOpenHelper{
 				p2.setDlugosc(c.getDouble(c.getColumnIndex(NAZWA_DLUGOSC)));
 				p2.setLatt(c.getDouble(c.getColumnIndex(NAZWA_LATT)));
 				p2.setLongitude(c.getDouble(c.getColumnIndex(NAZWA_LONGITUDE)));
-				Log.i("getAll: ",p2.toString());
+				//Log.i("getAll: ",p2.toString());
 				lista.add(p2);
 			}while(c.moveToNext());	
 		}

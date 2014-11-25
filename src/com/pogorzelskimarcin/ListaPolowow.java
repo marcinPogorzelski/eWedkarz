@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -60,8 +61,43 @@ public class ListaPolowow extends ActionBarActivity {
 			menu.add("SPRAWDè SZCZEG”£Y");
 			menu.add("EDYTUJ");
 			menu.add("USU—");
+			menu.add("USU— WSZYSTKO");
 		}
 	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		// super.onContextItemSelected(item);
+		AdapterContextMenuInfo inf = (AdapterContextMenuInfo) item.getMenuInfo();
+		
+		if (item.getTitle()=="SPRAWDè SZCZEG”£Y")
+			{
+				Log.i("CONTEXT_MENU",Integer.toString(inf.position));
+			} 
+		else if(item.getTitle()=="EDYTUJ")
+			{
+				Log.i("CONTEXT_MENU",Integer.toString(inf.position));
+			} 
+		else if(item.getTitle()=="USU— WSZYSTKO")
+		{
+			Log.i("CONTEXT_MENU",Integer.toString(inf.position));
+			MojaBazaClass mbc = new MojaBazaClass(getApplicationContext());
+			mbc.usunWszystko();
+		} 
+		else if (item.getTitle()=="USU—")
+			{
+				Log.i("CONTEXT_MENU",Integer.toString(inf.position));
+				MojaBazaClass mbc = new MojaBazaClass(getApplicationContext());
+				mbc.usunWpis(inf.position);	
+			} 
+		else 
+			{
+				Log.i("CONTEXT_MENU",Integer.toString(inf.position));
+			}
+		 return true;
+	}
+
+
 
 	/**
 	 * A placeholder fragment containing a simple view.
