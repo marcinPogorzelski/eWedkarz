@@ -43,7 +43,7 @@ public class MyMap extends FragmentActivity implements LocationListener {
  
             // Getting reference to the SupportMapFragment of activity_main.xml
             SupportMapFragment fm = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mmap);
- 
+            //TextView tv	= (TextView) findViewById(R.id.tv_location);
             // Getting GoogleMap object from the fragment
             googleMap = fm.getMap();
  
@@ -90,8 +90,6 @@ public class MyMap extends FragmentActivity implements LocationListener {
  
         // Setting latitude and longitude in the TextView tv_location
         tvLocation.setText("Latitude:" +  latitude  + ", Longitude:"+ longitude );
- 
-		
 	}
 
 	@Override

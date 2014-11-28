@@ -384,7 +384,7 @@ int id listview5 0x7f08005a
 int id match_parent 0x7f08000c
 int id menuLabel 0x7f080060
 int id middle 0x7f080024
-int id mmap 0x7f080050
+int id mmap 0x7f08004f
 int id monochrome 0x7f080013
 int id never 0x7f08001c
 int id none 0x7f080000
@@ -424,7 +424,7 @@ int id textViewWarunkiPogodowe 0x7f080054
 int id textViewWarunkiPogodoweLabel 0x7f080053
 int id title 0x7f08003d
 int id top_action_bar 0x7f080032
-int id tv_location 0x7f08004f
+int id tv_location 0x7f080050
 int id up 0x7f080033
 int id useLogo 0x7f080016
 int id withText 0x7f08001f

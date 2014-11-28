@@ -1520,7 +1520,7 @@ containing a value of this type.
         public static final int match_parent=0x7f08000c;
         public static final int menuLabel=0x7f080060;
         public static final int middle=0x7f080024;
-        public static final int mmap=0x7f080050;
+        public static final int mmap=0x7f08004f;
         public static final int monochrome=0x7f080013;
         public static final int never=0x7f08001c;
         public static final int none=0x7f080000;
@@ -1560,7 +1560,7 @@ containing a value of this type.
         public static final int textViewWarunkiPogodoweLabel=0x7f080053;
         public static final int title=0x7f08003d;
         public static final int top_action_bar=0x7f080032;
-        public static final int tv_location=0x7f08004f;
+        public static final int tv_location=0x7f080050;
         public static final int up=0x7f080033;
         public static final int useLogo=0x7f080016;
         public static final int withText=0x7f08001f;
