@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
+import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,9 +15,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class DodajPolowActivity extends ActionBarActivity {
+	
+	static EditText gatunekET;
+	static EditText dlugoscET;
+	static EditText wagaET;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +80,9 @@ public class DodajPolowActivity extends ActionBarActivity {
 			View rootView = inflater.inflate(R.layout.fragment_dodaj_polow,
 					container, false);
 			Button button = (Button) rootView.findViewById(R.id.btnDodaj);
+			wagaET = (EditText) rootView.findViewById(R.id.editTextWpiszWage);
+			gatunekET = (EditText) rootView.findViewById(R.id.editTextWpiszGatunek);
+			dlugoscET = (EditText) rootView.findViewById(R.id.editTextWpiszDlugosc);
 			button.setOnClickListener(new View.OnClickListener() {
 				
 				@Override
@@ -90,12 +100,13 @@ public class DodajPolowActivity extends ActionBarActivity {
 			MojaBazaClass mbc = new MojaBazaClass(context);
 			//Toast.makeText(context, mbc.getReadableDatabase().toString(), Toast.LENGTH_LONG).show();
 			mbc.dodajWpis(
-					"Szczupak"
-					, 45.0
-					, 15.0
+					gatunekET.getText().toString()
+					, Double.parseDouble(wagaET.getText().toString())
+					, Double.parseDouble(dlugoscET.getText().toString())
 					, 22.0
 					, 55.0
 					);
+			mbc.close();
 		}
 	}
 	

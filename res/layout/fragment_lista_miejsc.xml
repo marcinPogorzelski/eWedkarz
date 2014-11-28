@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,10 +7,37 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.pogorzelskimarcin.ListaMiejsc$PlaceholderFragment" >
-<ListView
-  android:id="@+id/android:listview"
-  android:layout_width="wrap_content"
-  android:layout_height="wrap_content" >
-</ListView> 
-</LinearLayout>
+	
+    <ListView
+	  	android:id="@+id/listview5"
+	  	android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:background="#afeeee"
+		android:layout_weight="2"
+		android:drawSelectorOnTop="false" >
+	</ListView>
+     <TextView 
+        android:id="@+id/text1"
+    	android:textSize="16sp"
+    	android:textStyle="bold"
+    	android:textColor="#FFFF00"
+    	android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"/>
+    <TextView 
+        android:id="@+id/text2"
+    	android:textSize="12sp"
+    	android:textStyle="bold"
+    	android:layout_width="wrap_content"
+    	android:layout_below="@+id/text1"
+    	android:layout_height="fill_parent"/>
+    <TextView 
+        android:id="@+id/text3"
+    	android:typeface="sans"
+    	android:textSize="14sp"
+    	android:textStyle="italic"
+    	android:layout_below="@+id/text2"
+    	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"/> 
+
+</RelativeLayout>
 
