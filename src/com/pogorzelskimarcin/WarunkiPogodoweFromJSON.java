@@ -6,12 +6,16 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class WarunkiPogodoweFromJSON extends Activity {
 	private static final String WEATHER = "weather";
@@ -23,15 +27,28 @@ public class WarunkiPogodoweFromJSON extends Activity {
 	TextView warunkiPogodowe;
 	TextView temperaturaLabel;
 	TextView warunkiLabel;
+	LocationManager locManager;
+	Location lastKnownLocation;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_warunki_pogodowe_from_json);
-		temperaturaLabel = (TextView)findViewById(R.id.textViewTemperaturaLabel);
-		warunkiLabel = (TextView)findViewById(R.id.textViewWarunkiPogodoweLabel);
-		textViewTemperatura = (TextView)findViewById(R.id.textViewTemperatura);
-		warunkiPogodowe = (TextView)findViewById(R.id.textViewWarunkiPogodowe);
+		temperaturaLabel = (TextView) findViewById(R.id.textViewTemperaturaLabel);
+		warunkiLabel = (TextView) findViewById(R.id.textViewWarunkiPogodoweLabel);
+		textViewTemperatura = (TextView) findViewById(R.id.textViewTemperatura);
+		warunkiPogodowe = (TextView) findViewById(R.id.textViewWarunkiPogodowe);
+		locManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+		Criteria criteria = new Criteria();
+		String provider = locManager.getBestProvider(criteria, true);
+		lastKnownLocation = locManager.getLastKnownLocation(provider);
+		String latitude = Double.toString(lastKnownLocation.getLatitude());
+		String longitude = Double.toString(lastKnownLocation.getLongitude());
+		url = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&lang=pl&units=metric";
+		Log.i("JSON", "Latitude: "+latitude+"\nLongitude: "+longitude);
+		Toast.makeText(getApplicationContext(),
+				url,
+				Toast.LENGTH_LONG).show();
 		new JSONParse().execute();
 	}
 
@@ -53,44 +70,46 @@ public class WarunkiPogodoweFromJSON extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-private class JSONParse extends AsyncTask<String, String, JSONObject>
-{
+
+	private class JSONParse extends AsyncTask<String, String, JSONObject> {
 		private ProgressDialog progressDialog;
-	@Override
-	protected void onPreExecute() {
-		super.onPreExecute();
-		progressDialog = new ProgressDialog(WarunkiPogodoweFromJSON.this);
-		progressDialog.setMessage("Pobieram dane...");
-		progressDialog.setIndeterminate(false);
-		progressDialog.setCancelable(true);
-		progressDialog.show();
-	}
 
-	@Override
-	protected void onPostExecute(JSONObject result) {
-		progressDialog.dismiss();
-		try {
-			jsonArray = result.getJSONArray(WEATHER);
-			JSONObject obj = jsonArray.getJSONObject(0);
-			String warunki = obj.getString(WARUNKI_POGODOWE);
-			JSONObject objTemp = result.getJSONObject("main");
-			String temp = objTemp.getString(TEMPERATURA);
-			//String name = result.getString("name");
-			//Log.i("WarunkiPogodoweFromJSON 'name': ", name);
-			warunkiPogodowe.setText(warunki);
-			textViewTemperatura.setText(temp);
-		} catch (JSONException e) {
-			e.printStackTrace();
-			Log.i("WarunkiPogodoweFromJSON", "B³¹d 'e': "+e.getLocalizedMessage());
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			progressDialog = new ProgressDialog(WarunkiPogodoweFromJSON.this);
+			progressDialog.setMessage("Pobieram dane...");
+			progressDialog.setIndeterminate(false);
+			progressDialog.setCancelable(true);
+			progressDialog.show();
 		}
-	}
 
-	@Override
-	protected JSONObject doInBackground(String... params) {
-		JSONParser jsonParser = new JSONParser();
-		JSONObject jsonObject = jsonParser.getJSONFromUrl(url);
-		return jsonObject;
-	}
+		@Override
+		protected void onPostExecute(JSONObject result) {
+			progressDialog.dismiss();
+			try {
+				jsonArray = result.getJSONArray(WEATHER);
+				JSONObject obj = jsonArray.getJSONObject(0);
+				String warunki = obj.getString(WARUNKI_POGODOWE);
+				JSONObject objTemp = result.getJSONObject("main");
+				String temp = objTemp.getString(TEMPERATURA);
+				// String name = result.getString("name");
+				// Log.i("WarunkiPogodoweFromJSON 'name': ", name);
+				warunkiPogodowe.setText(warunki);
+				textViewTemperatura.setText(temp);
+			} catch (JSONException e) {
+				e.printStackTrace();
+				Log.i("WarunkiPogodoweFromJSON",
+						"B³¹d 'e': " + e.getLocalizedMessage());
+			}
+		}
+
+		@Override
+		protected JSONObject doInBackground(String... params) {
+			JSONParser jsonParser = new JSONParser();
+			JSONObject jsonObject = jsonParser.getJSONFromUrl(url);
+			return jsonObject;
+		}
 	}
 
 }
