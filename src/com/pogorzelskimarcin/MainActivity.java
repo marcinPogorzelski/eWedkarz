@@ -89,5 +89,11 @@ public class MainActivity extends ActionBarActivity {
 		Intent intent = new Intent(this,WarunkiPogodoweFromJSON.class);
 		startActivity(intent);
 	}
+	
+	public void NewPhoto(View view)
+	{
+		Intent intent = new Intent(this, Photo.class);
+		startActivity(intent);
+	}
 
 }

@@ -25,5 +25,8 @@
     <string name="title_activity_moja_lista_polowow">MojaListaPolowow</string>
     <string name="title_activity_warunki_pogodowe_from_json">WarunkiPogodoweFromJSON</string>
     <string name="btnAktualneWarunki">Aktualne Warunki Pogodowe</string>
+    <string name="title_activity_photo">Photo</string>
+    <string name="ButtonPhotoText">Zrób zdjęcie</string>
+    <string name="TakeAPhotoBtnText">Wykonaj zdjęcie</string>
 
 </resources>

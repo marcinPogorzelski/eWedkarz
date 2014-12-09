@@ -36,8 +36,8 @@
             android:id="@+id/btnZaznaczMiejsce"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btnZaznaczMiejsceText" 
-            android:onClick="ZaznaczMiejsce"/>
+            android:onClick="ZaznaczMiejsce"
+            android:text="@string/btnZaznaczMiejsceText" />
 
         <Button
             android:id="@+id/btnHistoriaPolowow"
@@ -59,6 +59,14 @@
             android:layout_height="wrap_content"
             android:text="@string/btnAktualneWarunki"
             android:onClick="WarunkiPogodoweJSON" />
+
+        <Button
+            android:id="@+id/TakeAPhotoBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/TakeAPhotoBtnText"
+            android:onClick="NewPhoto"
+             />
 
     </LinearLayout>
 

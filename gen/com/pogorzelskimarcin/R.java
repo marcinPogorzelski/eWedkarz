@@ -1463,6 +1463,7 @@ containing a value of this type.
     }
     public static final class id {
         public static final int ButtonAktualneWarunki=0x7f080065;
+        public static final int TakeAPhotoBtn=0x7f080066;
         public static final int action_bar=0x7f08002e;
         public static final int action_bar_activity_content=0x7f080027;
         public static final int action_bar_container=0x7f08002d;
@@ -1474,7 +1475,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f080028;
         public static final int action_menu_presenter=0x7f080029;
         public static final int action_mode_close_button=0x7f080036;
-        public static final int action_settings=0x7f080066;
+        public static final int action_settings=0x7f080067;
         public static final int activity_chooser_view_content=0x7f080037;
         public static final int always=0x7f08001e;
         public static final int beginning=0x7f080023;
@@ -1623,13 +1624,14 @@ containing a value of this type.
         public static final int activity_main=0x7f03001b;
         public static final int activity_moja_lista_polowow=0x7f03001c;
         public static final int activity_my_map=0x7f03001d;
-        public static final int activity_warunki_pogodowe_from_json=0x7f03001e;
-        public static final int fragment_dodaj_polow=0x7f03001f;
-        public static final int fragment_lista_miejsc=0x7f030020;
-        public static final int fragment_lista_polowow=0x7f030021;
-        public static final int fragment_main=0x7f030022;
-        public static final int fragment_my_map=0x7f030023;
-        public static final int support_simple_spinner_dropdown_item=0x7f030024;
+        public static final int activity_photo=0x7f03001e;
+        public static final int activity_warunki_pogodowe_from_json=0x7f03001f;
+        public static final int fragment_dodaj_polow=0x7f030020;
+        public static final int fragment_lista_miejsc=0x7f030021;
+        public static final int fragment_lista_polowow=0x7f030022;
+        public static final int fragment_main=0x7f030023;
+        public static final int fragment_my_map=0x7f030024;
+        public static final int support_simple_spinner_dropdown_item=0x7f030025;
     }
     public static final class menu {
         public static final int dodaj_polow=0x7f0c0000;
@@ -1640,10 +1642,13 @@ containing a value of this type.
         public static final int mapa=0x7f0c0005;
         public static final int moja_lista_polowow=0x7f0c0006;
         public static final int my_map=0x7f0c0007;
-        public static final int warunki_pogodowe_from_json=0x7f0c0008;
+        public static final int photo=0x7f0c0008;
+        public static final int warunki_pogodowe_from_json=0x7f0c0009;
     }
     public static final class string {
+        public static final int ButtonPhotoText=0x7f060049;
         public static final int ListaMiejscTextView1Text=0x7f060043;
+        public static final int TakeAPhotoBtnText=0x7f06004a;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f060024;
@@ -1811,6 +1816,7 @@ containing a value of this type.
         public static final int title_activity_mapa=0x7f060040;
         public static final int title_activity_moja_lista_polowow=0x7f060045;
         public static final int title_activity_my_map=0x7f060041;
+        public static final int title_activity_photo=0x7f060048;
         public static final int title_activity_warunki_pogodowe_from_json=0x7f060046;
         /**  Text on a placeholder buy button when Google Play services is not
          available or up-to-date 
