@@ -44,11 +44,10 @@ public class WarunkiPogodoweFromJSON extends Activity {
 		lastKnownLocation = locManager.getLastKnownLocation(provider);
 		String latitude = Double.toString(lastKnownLocation.getLatitude());
 		String longitude = Double.toString(lastKnownLocation.getLongitude());
-		url = "http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&lang=pl&units=metric";
-		Log.i("JSON", "Latitude: "+latitude+"\nLongitude: "+longitude);
-		Toast.makeText(getApplicationContext(),
-				url,
-				Toast.LENGTH_LONG).show();
+		url = "http://api.openweathermap.org/data/2.5/weather?lat=" + latitude
+				+ "&lon=" + longitude + "&lang=pl&units=metric";
+		Log.i("JSON", "Latitude: " + latitude + "\nLongitude: " + longitude);
+		Toast.makeText(getApplicationContext(), url, Toast.LENGTH_LONG).show();
 		new JSONParse().execute();
 	}
 
