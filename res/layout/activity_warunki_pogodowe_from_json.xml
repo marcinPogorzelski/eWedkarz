@@ -19,28 +19,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5px"
-            android:text="Temperatura:" />
+            android:ellipsize="middle"
+            android:text="Temperatura:"
+            android:textSize="24dp" />
 
         <TextView
             android:id="@+id/textViewTemperatura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5px"
-            android:text="TextView" />
+            android:textSize="24dp" />
 
         <TextView
             android:id="@+id/textViewWarunkiPogodoweLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5px"
-            android:text="WarunkiPogodowe:" />
+            android:text="WarunkiPogodowe:"
+            android:textSize="24dp" />
 
         <TextView
             android:id="@+id/textViewWarunkiPogodowe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5px"
-            android:text="TextView" />
+            android:textSize="24dp" />
+
     </LinearLayout>
 
 </RelativeLayout>
